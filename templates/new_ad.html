@@ -1,10 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Yeni İlan</title>
 </head>
 <body>
-$END$
+    <h1>Yeni İlan Ekle</h1>
+    <form method="post" action="{{ url_for('add_ad') }}">
+        <label for="title">Başlık:</label><br>
+        <input type="text" id="title" name="title"><br>
+        <label for="description">Açıklama:</label><br>
+        <input type="text" id="description" name="description"><br>
+        <label for="price">Fiyat:</label><br>
+        <input type="text" id="price" name="price"><br>
+        <label for="city">Şehir:</label><br>
+        <input type="text" id="city" name="city"><br>
+        <input type="submit" value="Ekle">
+    </form>
 </body>
 </html>

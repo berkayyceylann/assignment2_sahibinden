@@ -1,10 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Arama Sonuçları</title>
 </head>
 <body>
-$END$
+    <h1>'{{ query }}' için Arama Sonuçları</h1>
+    <ul>
+        {% for ad in ads %}
+        <li>
+            <h2>{{ ad.title }}</h2>
+            <p>Açıklama: {{ ad.description }}</p>
+            <p>Fiyat: {{ ad.price }} TL</p>
+            <p>Şehir: {{ ad.city }}</p>
+            <a href="{{ url_for('detail', id=ad.id) }}">Detaylar</a>
+        </li>
+        {% else %}
+        <li>Arama sonucu bulunamadı.</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('home') }}">Ana Sayfaya Dön</a>
 </body>
 </html>

@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>İlan Detayı</title>
 </head>
 <body>
-$END$
+    <h1>İlan Detayı</h1>
+    <div>
+        <h2>{{ ad.title }}</h2>
+        <p>Açıklama: {{ ad.description }}</p>
+        <p>Fiyat: {{ ad.price }} TL</p>
+        <p>Şehir: {{ ad.city }}</p>
+    </div>
+    <a href="{{ url_for('home') }}">Ana Sayfaya Dön</a>
 </body>
 </html>
